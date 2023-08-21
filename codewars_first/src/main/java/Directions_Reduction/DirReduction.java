@@ -1,9 +1,6 @@
 package Directions_Reduction;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class DirReduction {
 
@@ -75,10 +72,12 @@ public class DirReduction {
 //        }
 //        return arr2.toArray(new String[arr2.size()]);
 
-        ArrayList<String> arr2 = new ArrayList<>();
-        for (String s : arr) {
-            arr2.add(s);
-        }
+//        ArrayList<String> arr2 = new ArrayList<>();
+//        for (String s : arr) {
+//            arr2.add(s);
+//        }
+
+        List<String> arr2 = new ArrayList<String>(Arrays.asList(arr));
         boolean check = true;
         boolean innerCheck = false;
 //        int count = 0;
