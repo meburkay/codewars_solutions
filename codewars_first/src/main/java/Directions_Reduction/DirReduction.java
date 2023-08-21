@@ -75,17 +75,17 @@ public class DirReduction {
 //        }
 //        return arr2.toArray(new String[arr2.size()]);
 
-
-
-
-
         ArrayList<String> arr2 = new ArrayList<>();
         for (String s : arr) {
             arr2.add(s);
         }
         boolean check = true;
-        int count = 0;
+        boolean innerCheck = false;
+//        int count = 0;
         while (check) {
+
+            innerCheck = false;
+
             for (int i = 0; i < arr2.size()-1; i++) {
                 if ((arr2.get(i).equals("NORTH") && arr2.get(i + 1).equals("SOUTH")) ||
                         (arr2.get(i).equals("SOUTH") && arr2.get(i + 1).equals("NORTH")) ||
@@ -93,15 +93,16 @@ public class DirReduction {
                         (arr2.get(i).equals("EAST") && arr2.get(i + 1).equals("WEST")) ) {
                     arr2.set(i,"");
                     arr2.set(i+1,"");
-                    count++;
+                    innerCheck = true;
                 }
             }
             arr2.removeIf(e -> e.equals(""));
-            if(count == 0){
-                check = false;
-            }else{
-                count = 0;
-            }
+            check = innerCheck ? true : false;
+//            if(count == 0){
+//                check = false;
+//            }else{
+//                count = 0;
+//            }
         }
         return arr2.toArray(new String[arr2.size()]);
     }
