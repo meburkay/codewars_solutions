@@ -3,7 +3,7 @@ package stop_gninnips_my_sdrow;
 public class SpinWords {
 
     public String spinWords(String sentence) {
-        //TODO: Code stuff here
+
         String[] sentenceArray = sentence.split(" ");
         for(int i=0; i<sentenceArray.length; i++){
             if(sentenceArray[i].length() >= 5){
